@@ -3,9 +3,10 @@ output_dir: "."
 navbar:
   title: "Getting to know Amadeia Rector"
   right:
+    - text: "Home"
       href: index.html
     - text: "Projects"
-      href: projects.html
+      href: Projects.html
     - text: "Qualifications"
       href: qualifications.html
     - text: "About me"
