@@ -10,6 +10,6 @@ navbar:
     - icon: fa-envelope fa-lg
       href: mailto:aar2192@cumc.columbia.edu
     - icon: fa-github fa-lg
-      href: http://github.com/amadeia.github.io/
+      href: http://github.com/amadeia/
 output:
   html_document
