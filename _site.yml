@@ -19,10 +19,5 @@ navbar:
       href: https://www.linkedin.com/in/amadeiarector 
 output:
   html_document:
-  theme: cosmo
-    include:
-      in_header: header.html
-      after_body: footer.html
-    css: styles.css
-    lib_dir: site_libs
-    self_contained: no
+    theme: cerulean
+    css: style.css
