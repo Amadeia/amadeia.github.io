@@ -2,9 +2,10 @@
 title: "About Me"
 ---
 
+
 <img src="images/DSC_0458.jpg" style="width:75%">
 
-## Mini biography
+## Who I am
 
 My name is Amadeia Rector and I am currently an MPH candidate at the Columbia University Mailman School of Public Health. I am in my second and final year - I have been focusing on epidemiology.
 
@@ -12,5 +13,5 @@ Before pursuing an MPH, I worked at the San Francisco Department of Public Healt
 
 ## Hobbies
 
-In my spare time, I enjoy practicing and dancing tango, running,tennis, exploring nature, and hosting potlucks.
- 
+In my spare time, I enjoy practicing and dancing tango, running, playing tennis, exploring nature, and hosting potlucks.
+
