@@ -1,5 +1,7 @@
 ---
-title: "Home"
+title: "Getting to Know Amadeia Rector"
 ---
 
-# Home
+## My purpose
+
+This is a website that showcases projects of **Amadeia Rector** and highlights her experiences in public health and in the public sector.
