@@ -2,4 +2,7 @@
 title: "Getting to Know Amadeia Rector"
 ---
 
-This is a website that showcases the projects of **Amadeia Rector** and highlights her experiences in public health and in the public sector.
+
+
+
+This is a website that showcases the projects of **Amadeia Rector** and highlights her experiences in public health and her current datascience projects.
