@@ -1,3 +1,65 @@
 ---
 title: "Qualifications"
 ---
+### Education
+
+#### Columbia University Mailman School of Public Health
+  ●	MPH in Epidemiology, May 2019
+  
+#### University of California, Berkeley
+  ●	BA Molecular and Cell Biology, Immunology: Infectious Diseases, 2013  
+  ●	BA Spanish and Portuguese Language and Literature, 2013
+
+### Professional experience
+
+**Columbia University Mailman School of Public Health, New York, NY, Sept. - current**  
+_Teaching Assistant, Quantitative Research Methods & Applications_  
+●	Facilitate class sessions and create content for homework and activities for over 50 students  
+  
+**SESSTIM, Aix-Marseille Université, Marseille, France, May - July 2018**  
+_Analyst intern_  
+●	Conducted statistical analyses on over 7000 colorectal cancer patients from two French registries using the “survival” and “idmTpreg” R packages  
+  
+**Northeast/Caribbean AIDS Education & Training Center, New York, NY, Feb. - May 2018**  
+_Puerto Rico Health Information Exchange (HIE) Project Manager_  
+●	Developed content for the the Health Information Exchange Symposium in San Juan, Puerto Rico  
+●	Assessed HIE needs and capabilities of 17 clinics within Puerto Rico  
+  
+**San Francisco Department of Public Health, San Francisco, CA, Sept. 2014 - Aug. 2017**  
+_Research Associate, Applied Research Community Health Epidemiology and Surveillance: HIV Surveillance_  
+●	Recruited and coordinated interviews for 492 participants and conducted 120 two hour-long confidential interviews for the Medical Monitoring Project (MMP), a CDC HIV surveillance project  
+●	Drafted procedures, edited surveillance reports, presented research, and translated documents into Spanish  
+●	Reported over 50 HIV/AIDS cases, reviewed over 200 medical records, and trained staff in data collection  
+●	Collected Zika surveillance data and communicated with providers on Zika testing protocol  
+  
+**AmeriCorps Service,The Unity Council, Oakland, CA, Aug. 2013 - Aug. 2014**  
+_Career Pathways Program Facilitator_  
+●	Developed curriculum and launched a program to engage community members in discussing health issues  
+●	Created and implemented a community needs assessment survey and conducted 100 interviews  
+  
+**Rodan and Fields Dermatologists, San Francisco, CA, May 2013 - Jan. 2014**
+_Intern, Research and Development_  
+●	Researched current technologies and hair growth products and set up a chemical ingredient database  
+  
+**Lawrence Berkeley National Laboratory, Berkeley, CA, May 2011 - May 2013**  
+_Research Assistant, Downing Lab_  
+●	Presented research on the structure and dynamics of axonemes and assisted with grant proposals  
+  
+### Other activities  
+  
+**Global Medical Brigades, Honduras, May 2012**
+_Volunteer_  
+●	Set up a clinic, provided dental assistance, translated for doctors and triaged over 150 patients  
+  
+### Public recognition
+  
+_Behavioral and Clinical Characteristics of Persons Receiving HIV Medical Care 2013-2014,SFDPH_  
+_Cumulative plasma HIV burden disparities among adults in HIV care in San Francisco: implications for HIV transmission in the era of treatment as prevention (2018)_  
+  
+### Skills and certifications  
+  
+**Computer:** Microsoft Office, Adobe Suite, SAS, QGIS, R  
+**Electronic medical record systems:** Brown and Toland, NextGen, eClinical Works  
+**Languages:** Advanced/native Spanish, proficient Portuguese, basic French, basic Catalan
+
+For more information, visit my [LinkedIn](https://www.linkedin.com/in/amadeiarector).
