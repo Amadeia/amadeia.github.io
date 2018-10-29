@@ -2,5 +2,5 @@
 title: "Projects"
 ---
 
-
+For my most up-to-date projects, visit my [github account](https://github.com/Amadeia).
 
