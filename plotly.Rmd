@@ -33,7 +33,7 @@ weather_df %>%
       title = "Boxplot of Maximum Temperature at 3 Weather Stations"
     )
 ```
-```{r }
+```{r scatterplot }
 weather_df %>% 
     mutate(text_label = str_c("Precipitation: ", prcp, "\nLocation: ", name)) %>% 
   plot_ly(x = ~date, y = ~tmin, type = "scatter", mode = "markers",
