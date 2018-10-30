@@ -15,7 +15,7 @@ weather_df =
                       date_min = "2017-01-01",
                       date_max = "2017-12-31") %>%
   mutate(
-    name = recode(id, USW00094728 = "CentralPark, NY", 
+    name = recode(id, USW00094728 = "Central Park, NY", 
                       USC00519397 = "Waikiki, HI",
                       USS0023B17S = "Waterhole, WA"),
     prcp = prcp / 10,
@@ -25,15 +25,28 @@ weather_df =
 ```
 
 ```{r scatterplot}
+a = list(
+  title = "Maximum Temperature (ºC)"
+)
+
 weather_df %>% 
-  plot_ly(y = ~tmax, type = "box", mode = "markers",
+  plot_ly(y = ~tmax, type = "box",
           alpha = 0.5,
           color = ~name) %>% 
     layout(
-      title = "Boxplot of Maximum Temperature at 3 Weather Stations"
+      title = "Boxplot of Maximum Temperature at 3 Weather Stations",
+      yaxis = a
     )
 ```
-```{r density }
+```{r scatter}
+x = list(
+  title = "Date"
+)
+
+y = list(
+  title = "Minimum Temperature (ºC)"
+)
+
 weather_df %>% 
     mutate(text_label = str_c("Precipitation: ", prcp, "\nLocation: ", name)) %>% 
   plot_ly(x = ~date, y = ~tmin, type = "scatter", mode = "markers",
@@ -41,17 +54,31 @@ weather_df %>%
           color = ~name,
           text = ~text_label) %>% 
   layout(
-    title = "Minimum Temperature Across Weather Stations in 2017"
+    title = "Minimum Temperature Across 3 Weather Stations in 2017",
+    xaxis = x, yaxis = y
   )
 ```
 ```{r ny_trend}
+x = list(
+  title = "Date"
+)
+
+y = list(
+  title = "Minimum Temperature (ºC)"
+)
+
   weather_df %>% 
-  filter( name == "CentralPark, NY") %>% 
+  filter( name == "Central Park, NY") %>% 
   mutate(text_label = str_c("Precipitation: ", prcp, "\nSnow fall: ", snow)) %>% 
   plot_ly(x = ~date, y = ~tmin, type = "scatter", mode = "connectgaps",
           alpha = 0.5,
-          text = ~text_label)
+          text = ~text_label) %>% 
+  layout(
+    title = "Central Park Minimum Temperature Trends in 2017",
+    xaxis = x, yaxis = y)
 
 ```
+
+
 
 
