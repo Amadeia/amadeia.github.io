@@ -11,7 +11,7 @@ library(plotly)
 ```{r}
 weather_df =
   rnoaa::meteo_pull_monitors(c("USW00094728", "USC00519397", "USS0023B17S"),
-                      var = c("PRCP", "TMIN", "TMAX"), 
+                      var = c("PRCP", "TMIN", "TMAX", "snow"), 
                       date_min = "2017-01-01",
                       date_max = "2017-12-31") %>%
   mutate(
@@ -33,13 +33,25 @@ weather_df %>%
       title = "Boxplot of Maximum Temperature at 3 Weather Stations"
     )
 ```
-```{r scatterplot }
+```{r density }
 weather_df %>% 
     mutate(text_label = str_c("Precipitation: ", prcp, "\nLocation: ", name)) %>% 
   plot_ly(x = ~date, y = ~tmin, type = "scatter", mode = "markers",
           alpha = 0.5,
           color = ~name,
+          text = ~text_label) %>% 
+  layout(
+    title = "Minimum Temperature Across Weather Stations in 2017"
+  )
+```
+```{r ny_trend}
+  weather_df %>% 
+  filter( name == "CentralPark, NY") %>% 
+  mutate(text_label = str_c("Precipitation: ", prcp, "\nSnow fall: ", snow)) %>% 
+  plot_ly(x = ~date, y = ~tmin, type = "scatter", mode = "connectgaps",
+          alpha = 0.5,
           text = ~text_label)
+
 ```
 
 
