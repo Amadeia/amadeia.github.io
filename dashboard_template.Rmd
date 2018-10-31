@@ -36,7 +36,7 @@ nydata =
 Column {data-width=650}
 -----------------------------------------------------------------------
 
-### Chart A
+### Minimum Temperature near NYC, 2017
 
 ```{r scatter, echo=FALSE}
 x = list(
@@ -54,7 +54,6 @@ nydata %>%
           color = ~name,
           text = ~text_label) %>% 
   layout(
-    title = "Minimum Temperature near NYC, 2017",
     xaxis = x, yaxis = y
   )
 ```
@@ -62,7 +61,7 @@ nydata %>%
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Chart B
+### Boxplot of Maximum Temperature near NYC, 2017
 
 ```{r boxplot, echo=FALSE}
 a = list(
@@ -74,12 +73,11 @@ nydata %>%
           alpha = 0.5,
           color = ~name) %>% 
     layout(
-      title = "Boxplot of Maximum Temperature near NYC, 2017",
       yaxis = a
     )
 ```
 
-### Chart C
+### Central Park Minimum Temperature Trends,2017
 
 ```{r centralpark, echo=FALSE}
 x = list(
@@ -97,7 +95,6 @@ y = list(
           alpha = 0.5,
           text = ~text_label) %>% 
   layout(
-    title = "Central Park Minimum Temperature Trends,2017",
     xaxis = x, yaxis = y)
 
 ```
