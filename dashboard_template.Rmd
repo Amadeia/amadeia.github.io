@@ -17,7 +17,7 @@ library(plotly)
 
 This page shows plotly plots for the NY NOAA dataset.
 
-```{r load_data}
+```{r load_data, include=FALSE}
 nydata =
   rnoaa::meteo_pull_monitors(c("USW00094728", "USW00014734", "USW00094789"),
                       var = c("PRCP", "TMIN", "TMAX", "snow"), 
@@ -38,7 +38,7 @@ Column {data-width=650}
 
 ### Chart A
 
-```{r scatter}
+```{r scatter, echo=FALSE}
 x = list(
   title = "Date"
 )
@@ -64,7 +64,7 @@ Column {data-width=350}
 
 ### Chart B
 
-```{r boxplot}
+```{r boxplot, echo=FALSE}
 a = list(
   title = "Maximum Temperature (ºC)"
 )
@@ -81,7 +81,7 @@ nydata %>%
 
 ### Chart C
 
-```{r centralpark}
+```{r centralpark, echo=FALSE}
 x = list(
   title = "Date"
 )
