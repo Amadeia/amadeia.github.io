@@ -1,6 +1,105 @@
 ---
 title: "Projects"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
 ---
-
 For my most up-to-date projects, visit my [github account](https://github.com/Amadeia).
+
+Below you'll find an example using flexdashboards, using the [NY NOAA](http://p8105.com/dataset_noaa.html) dataset. 
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(viridisLite)
+library(viridis)
+library(plotly)
+```
+
+This page shows plotly plots for the NY NOAA dataset.
+
+```{r load_data}
+nydata =
+  rnoaa::meteo_pull_monitors(c("USW00094728", "USW00014734", "USW00094789"),
+                      var = c("PRCP", "TMIN", "TMAX", "snow"), 
+                      date_min = "2017-01-01",
+                      date_max = "2017-12-31") %>%
+  mutate(
+    name = recode(id, USW00094728 = "Central Park, Manhattan", 
+                      USW00014734 = "Newark Liberty International Airport, NJ",
+                      USW00094789 = "JFK International Airport, Queens"),
+    prcp = prcp / 10,
+    tmin = tmin / 10,
+    tmax = tmax / 10) %>%
+  select(name, id, everything())
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r scatter}
+x = list(
+  title = "Date"
+)
+
+y = list(
+  title = "Minimum Temperature (ºC)"
+)
+
+nydata %>% 
+    mutate(text_label = str_c("Precipitation: ", prcp, "\nLocation: ", name)) %>% 
+  plot_ly(x = ~date, y = ~tmin, type = "scatter", mode = "markers",
+          alpha = 0.5,
+          color = ~name,
+          text = ~text_label) %>% 
+  layout(
+    title = "Minimum Temperature near NYC, 2017",
+    xaxis = x, yaxis = y
+  )
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r boxplot}
+a = list(
+  title = "Maximum Temperature (ºC)"
+)
+
+nydata %>% 
+  plot_ly(y = ~tmax, type = "box",
+          alpha = 0.5,
+          color = ~name) %>% 
+    layout(
+      title = "Boxplot of Maximum Temperature near NYC, 2017",
+      yaxis = a
+    )
+```
+
+### Chart C
+
+```{r centralpark}
+x = list(
+  title = "Date"
+)
+
+y = list(
+  title = "Minimum Temperature (ºC)"
+)
+
+  nydata %>% 
+  filter( name == "Central Park, Manhattan") %>% 
+  mutate(text_label = str_c("Precipitation: ", prcp, "\nSnow fall: ", snow)) %>% 
+  plot_ly(x = ~date, y = ~tmin, type = "scatter", mode = "connectgaps",
+          alpha = 0.5,
+          text = ~text_label) %>% 
+  layout(
+    title = "Central Park Minimum Temperature Trends,2017",
+    xaxis = x, yaxis = y)
+
+```
 
