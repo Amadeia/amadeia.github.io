@@ -6,14 +6,14 @@ output: html_document
 
 This page shows plotly plots for the NY NOAA dataset.
 
-```{r setup, include=FALSE}
+```{r, include=FALSE}
 library(tidyverse)
 library(viridis)
 library(plotly)
 ```
 
 
-### Chart A
+
 ```{r}
 weather_df =
   rnoaa::meteo_pull_monitors(c("USW00094728", "USC00519397", "USS0023B17S"),
@@ -30,9 +30,7 @@ weather_df =
   select(name, id, everything()) 
 ```
 
-### Chart B
-
-```{r scatterplot}
+```{r boxplot}
 a = list(
   title = "Maximum Temperature (ºC)"
 )
@@ -47,7 +45,6 @@ weather_df %>%
     )
 ```
 
-### Chart C
 ```{r scatter}
 x = list(
   title = "Date"
