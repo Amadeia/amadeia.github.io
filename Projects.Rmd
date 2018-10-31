@@ -5,7 +5,10 @@ output:
     orientation: columns
     vertical_layout: fill
 ---
+**Click [here](index.html) to go back to the homepage.**
+
 For my most up-to-date projects, visit my [github account](https://github.com/Amadeia).
 
 Here is a [link](dashboard_template.html) to a flexdashboard example, using the [NY NOAA](http://p8105.com/dataset_noaa.html) dataset. 
+
 
