@@ -14,20 +14,21 @@ library(plotly)
 
 
 
-```{r}
-weather_df =
-  rnoaa::meteo_pull_monitors(c("USW00094728", "USC00519397", "USS0023B17S"),
+```{r load_data}
+nydata =
+  rnoaa::meteo_pull_monitors(c("USW00094728", "USW00014734", "USW00094789"),
                       var = c("PRCP", "TMIN", "TMAX", "snow"), 
                       date_min = "2017-01-01",
                       date_max = "2017-12-31") %>%
   mutate(
-    name = recode(id, USW00094728 = "Central Park, NY", 
-                      USC00519397 = "Waikiki, HI",
-                      USS0023B17S = "Waterhole, WA"),
+    name = recode(id, USW00094728 = "Central Park, Manhattan", 
+                      USW00014734 = "Newark Liberty International Airport, NJ",
+                      USW00094789 = "JFK International Airport, Queens"),
     prcp = prcp / 10,
     tmin = tmin / 10,
     tmax = tmax / 10) %>%
-  select(name, id, everything()) 
+  select(name, id, everything())
+
 ```
 
 ```{r boxplot}
@@ -35,12 +36,12 @@ a = list(
   title = "Maximum Temperature (ºC)"
 )
 
-weather_df %>% 
+nydata %>% 
   plot_ly(y = ~tmax, type = "box",
           alpha = 0.5,
           color = ~name) %>% 
     layout(
-      title = "Boxplot of Maximum Temperature at 3 Weather Stations",
+      title = "Boxplot of Maximum Temperature near NYC, 2017",
       yaxis = a
     )
 ```
@@ -54,14 +55,14 @@ y = list(
   title = "Minimum Temperature (ºC)"
 )
 
-weather_df %>% 
+nydata %>% 
     mutate(text_label = str_c("Precipitation: ", prcp, "\nLocation: ", name)) %>% 
   plot_ly(x = ~date, y = ~tmin, type = "scatter", mode = "markers",
           alpha = 0.5,
           color = ~name,
           text = ~text_label) %>% 
   layout(
-    title = "Minimum Temperature Across 3 Weather Stations in 2017",
+    title = "Minimum Temperature near NYC, 2017",
     xaxis = x, yaxis = y
   )
 ```
@@ -74,14 +75,14 @@ y = list(
   title = "Minimum Temperature (ºC)"
 )
 
-  weather_df %>% 
-  filter( name == "Central Park, NY") %>% 
+  nydata %>% 
+  filter( name == "Central Park, Manhattan") %>% 
   mutate(text_label = str_c("Precipitation: ", prcp, "\nSnow fall: ", snow)) %>% 
   plot_ly(x = ~date, y = ~tmin, type = "scatter", mode = "connectgaps",
           alpha = 0.5,
           text = ~text_label) %>% 
   layout(
-    title = "Central Park Minimum Temperature Trends in 2017",
+    title = "Central Park Minimum Temperature Trends,2017",
     xaxis = x, yaxis = y)
 
 ```

@@ -101,7 +101,4 @@ y = list(
     xaxis = x, yaxis = y)
 
 ```
-```{r}
-rmarkdown::render("dashboard_template.Rmd", output_format = "flex_dashboard")
-```
 
