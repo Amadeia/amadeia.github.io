@@ -24,18 +24,17 @@ nydata =
                       date_min = "2017-01-01",
                       date_max = "2017-12-31") %>%
   mutate(
-    name = recode(id, USW00094728 = "Central Park, Manhattan", 
-                      USW00014734 = "Newark Liberty International Airport, NJ",
-                      USW00094789 = "JFK International Airport, Queens"),
+    name = recode(id, USW00094728 = "Central Park", 
+                      USW00014734 = "Newark",
+                      USW00094789 = "JFK"),
     prcp = prcp / 10,
     tmin = tmin / 10,
     tmax = tmax / 10) %>%
   select(name, id, everything())
 ```
 
-Column {data-width=650}
+Column {data-width=500}
 -----------------------------------------------------------------------
-
 ### Minimum Temperature near NYC, 2017
 
 ```{r scatter, echo=FALSE}
@@ -53,14 +52,13 @@ nydata %>%
           alpha = 0.5,
           color = ~name,
           text = ~text_label) %>% 
-  layout(
+  layout(legend = list(x = 0.3, y = 0.1),
     xaxis = x, yaxis = y
   )
 ```
 
-Column {data-width=350}
+Column {data-width=500}
 -----------------------------------------------------------------------
-
 ### Boxplot of Maximum Temperature near NYC, 2017
 
 ```{r boxplot, echo=FALSE}
@@ -73,7 +71,8 @@ nydata %>%
           alpha = 0.5,
           color = ~name) %>% 
     layout(
-      yaxis = a
+      yaxis = a,
+      showlegend = FALSE
     )
 ```
 
@@ -89,7 +88,7 @@ y = list(
 )
 
   nydata %>% 
-  filter( name == "Central Park, Manhattan") %>% 
+  filter( name == "Central Park") %>% 
   mutate(text_label = str_c("Precipitation: ", prcp, "\nSnow fall: ", snow)) %>% 
   plot_ly(x = ~date, y = ~tmin, type = "scatter", mode = "connectgaps",
           alpha = 0.5,
