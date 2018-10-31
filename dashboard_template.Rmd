@@ -77,7 +77,7 @@ nydata %>%
     )
 ```
 
-### Central Park Minimum Temperature Trends,2017
+### Central Park Minimum Temperature Trends, 2017
 
 ```{r centralpark, echo=FALSE}
 x = list(
