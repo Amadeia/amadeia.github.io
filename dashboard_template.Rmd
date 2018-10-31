@@ -15,7 +15,7 @@ library(viridis)
 library(plotly)
 ```
 
-This page shows plotly plots for the NY NOAA dataset.
+This page shows plotly plots of the NY NOAA dataset. Click [here](Projects.html) to go back.
 
 ```{r load_data, include=FALSE}
 nydata =
